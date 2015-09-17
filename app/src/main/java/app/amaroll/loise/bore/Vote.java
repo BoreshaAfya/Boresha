@@ -1,5 +1,6 @@
 package app.amaroll.loise.bore;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,12 +25,15 @@ public class Vote extends ActionBarActivity {
     private ListView listView ;
     private ArrayAdapter<String> listAdapter ;
     private Toolbar toolbar;
+    ProgressDialog barProgressDialog;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vote_fragment);
+        barProgressDialog = ProgressDialog.show(Vote.this, "",
+                "Loading. Please wait...", true);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
@@ -52,12 +56,14 @@ public class Vote extends ActionBarActivity {
                         HashMap<String, String> article = new HashMap<String, String>();
                         article.put("name",
                                 result.getString("name"));
+                        article.put("work",
+                                result.getString("work"));
                         articles.add(article);
                     }
                     SimpleAdapter sAdap;
                     sAdap = new SimpleAdapter(Vote.this, articles, R.layout.vote_item,
-                            new String[]{"name"}, new int[]
-                            {R.id.textView2});
+                            new String[]{"name","work"}, new int[]
+                            {R.id.textView8,R.id.textView7});
 
                     final ListView lisView1 = (ListView) findViewById(R.id.mainListView);
                     lisView1.setAdapter(sAdap);

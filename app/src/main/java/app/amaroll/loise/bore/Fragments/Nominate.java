@@ -1,8 +1,10 @@
 package app.amaroll.loise.bore.Fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,12 +35,13 @@ public class Nominate extends Fragment implements View.OnClickListener {
     //This is the table which will contain all the data in parse//
     public static final String POSTS = "nominee";
 
+    AlertDialog.Builder builder;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.nominate_fragment, container, false);
 
         ParseUser.enableAutomaticUser();
-
 
         //initialization of values
         spinner1 = (Spinner) v.findViewById(R.id.spinner);
@@ -98,6 +101,21 @@ public class Nominate extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         //changing the edittexts to string;
+        //dialog box here
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        //Setting message manually and performing action on button click
+        builder.setTitle("Thanks")
+                .setMessage("You can now proceed to voting")
+                .setNegativeButton("ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
+        //changing the edit texts to strings;
+
         String name   = etNname.getText().toString();
         String number = etNnumber.getText().toString();
         String work   = etNwork.getText().toString();
