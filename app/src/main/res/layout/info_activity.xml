@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boresha Afya Star Awards night"
+        android:id="@+id/textView3"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="68dp"
+        android:layout_marginStart="68dp"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This year, our BoreshaAfya conference is going to be bigger and better! Previously, the annual event was an opportunity for all stakeholders in the health sector to meet and exchange ideas, while mapping a way forward. We have now taken it a notch higher to recognise and reward those in the health sector making a world of difference for the patients that they treat. Our aim is to fête those that are treating patients with dignity, compassion and respect."
+        android:id="@+id/textView5"
+        android:textSize="@dimen/text_size"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_marginTop="77dp" />
+
+</RelativeLayout>

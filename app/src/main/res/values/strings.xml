@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Boresha Afya</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="occupation">
+        <item>Doctor</item>
+        <item>Nurse</item>
+        <item>BClinicalOficer</item>
+        <item>Receptionist</item>
+        <item>Cleaner</item>
+    </string-array>
+    <string-array name="place">
+        <item>Baringo</item>
+        <item>Bomet</item>
+        <item>Bungoma</item>
+        <item>Busia</item>
+        <item>Elgeyo Marakwet</item>
+        <item>Embu</item>
+        <item>Garissa</item>
+        <item>Homabay</item>
+        <item>Isiolo</item>
+        <item>Kajiado</item>
+    </string-array>
+    <string name="title_activity_votes">Votes</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_candidates">Candidates</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
