@@ -1,6 +1,7 @@
 package app.amaroll.loise.bore.Fragments;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import app.amaroll.loise.bore.LoginSignUp;
 import app.amaroll.loise.bore.R;
 
 /**
@@ -94,6 +96,7 @@ public class Vote extends Fragment {
                 post.saveInBackground();
 
                 // Show Alert
+                startActivity(new Intent(getActivity(), LoginSignUp.class));
                 Toast.makeText(getActivity(),"Thanks for voting for: " +itemValue , Toast.LENGTH_LONG)
                         .show();
 

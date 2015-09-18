@@ -32,6 +32,10 @@
             android:name=".Candidates"
             android:label="@string/title_activity_candidates" >
         </activity>
+        <activity
+            android:name=".LoginSignUp"
+            android:label="@string/title_activity_login_sign_up" >
+        </activity>
     </application>
 
 </manifest>
