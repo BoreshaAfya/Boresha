@@ -1,9 +1,15 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent"
+    android:layout_height="700dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -12,69 +18,61 @@
 
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:src="@drawable/basalogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_above="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="42dp" />
-
+        android:src="@drawable/basalogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="supported by"
-        android:layout_gravity="center_horizontal"
-        android:textColor="#000"
+        android:text="In partners with"
         android:id="@+id/textView"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="49dp"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:weightSum="1"
-        android:padding="10dp"
-        android:id="@+id/linearLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_fixxit"
-            android:id="@+id/imageView2"
-            android:layout_alignTop="@+id/imageView4"
-            android:layout_toLeftOf="@+id/textView"
-            android:layout_toStartOf="@+id/textView"
-            android:layout_row="1"
-            android:layout_column="0" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_mhealth"
-            android:id="@+id/imageView4"
-            android:layout_row="1"
-            android:layout_column="4"/>
-
-        <ImageView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:src="@mipmap/ic_mm"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/logo"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView3"
-            android:layout_row="1"
-            android:layout_column="5" />
-    </GridLayout>
+        android:src="@drawable/morris"
+        android:layout_below="@+id/textView"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supported by:"
+        android:id="@+id/textView5"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:src="@drawable/fixxit_rebrand"/>
 </RelativeLayout>
+</ScrollView>

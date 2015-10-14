@@ -1,17 +1,14 @@
 package app.amaroll.loise.bore.Fragments;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -22,20 +19,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import app.amaroll.loise.bore.LoginSignUp;
 import app.amaroll.loise.bore.R;
 
 /**
- * Created by loise on 9/16/15.
+ * Created by loise on 10/13/15.
  */
-public class Vote extends Fragment {
+public class ViewVotes extends Fragment {
 
     //declaration of values
     public ListView listView1 ;
     private ArrayAdapter<String> listAdapter ;
     ProgressDialog barProgressDialog;
-    public static final String POSTS = "electronics_items";
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,7 +39,7 @@ public class Vote extends Fragment {
         listView1 = (ListView)v.findViewById(R.id.mainListView);
         barProgressDialog = ProgressDialog.show(getActivity(), "",
                 "Loading. Please wait...", true);
-        ParseQuery query = new ParseQuery("nominee");
+        ParseQuery query = new ParseQuery("voted");
         query.setLimit(100);
 
 
@@ -66,9 +60,9 @@ public class Vote extends Fragment {
                         articles.add(article);
                     }
                     SimpleAdapter sAdap;
-                    sAdap = new SimpleAdapter(getActivity(), articles, R.layout.vote_item,
+                    sAdap = new SimpleAdapter(getActivity(), articles, R.layout.voted_item,
                             new String[]{"name", "work"}, new int[]
-                            {R.id.textView8, R.id.textView7});
+                            {R.id.tvVotedname, R.id.tvVotedplace});
 
                     listView1.setAdapter(sAdap);
 
@@ -77,31 +71,6 @@ public class Vote extends Fragment {
 
         });
 
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                // ListView Clicked item index
-                int itemPosition = position;
-
-                // ListView Clicked item value
-//                String  itemValue    = (String) listView1.getItemAtPosition(position);
-                HashMap<String,String> itemValue =(HashMap<String,String>)listView1.getItemAtPosition(position);
-                String name = itemValue.get("name");
-                String work = itemValue.get("work");
-
-                ParseObject post = new ParseObject("voted");
-                post.put("name",name);
-                post.put("work",work);
-                post.saveInBackground();
-
-                // Show Alert
-                startActivity(new Intent(getActivity(), LoginSignUp.class));
-                Toast.makeText(getActivity(),"Next Step " , Toast.LENGTH_LONG)
-                        .show();
-
-            }
-        });
 
         return v;
     }

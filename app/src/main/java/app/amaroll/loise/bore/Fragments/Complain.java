@@ -1,7 +1,5 @@
 package app.amaroll.loise.bore.Fragments;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -20,12 +18,12 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 import app.amaroll.loise.bore.R;
-import app.amaroll.loise.bore.Vote;
 
 /**
- * Created by loise on 9/15/15.
+ * Created by loise on 10/14/15.
  */
-public class Nominate extends Fragment implements View.OnClickListener {
+public class Complain extends Fragment implements View.OnClickListener {
+
     //Declaration of values;
     Spinner spinner1, spinner2;
     EditText etNname, etNnumber, etNwork, etNresoan;
@@ -33,7 +31,7 @@ public class Nominate extends Fragment implements View.OnClickListener {
     String place, occupation;
 
     //This is the table which will contain all the data in parse//
-    public static final String POSTS = "nominee";
+    public static final String POSTS = "complain";
 
     AlertDialog.Builder builder;
 
@@ -113,7 +111,7 @@ public class Nominate extends Fragment implements View.OnClickListener {
 					/*
 					 * Save Post ParseObject
 					 */
-            ParseObject post = new ParseObject("nominee");
+            ParseObject post = new ParseObject("complain");
             post.put("name", name);
             post.put("number", number);
             post.put("work", work);
@@ -121,23 +119,8 @@ public class Nominate extends Fragment implements View.OnClickListener {
 
 
             post.saveInBackground();
-            //dialog box here
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            //Setting message manually and performing action on button click
-            builder.setTitle("Thanks")
-                    .setMessage("You can now proceed to voting")
-                    .setNegativeButton("ok", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // do nothing
-                        }
-                    })
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
 
-            Toast.makeText(getActivity(), "Updating", Toast.LENGTH_SHORT).show();
-            //finish();
-            startActivity(new Intent(getActivity(),Vote.class));
-           // ((MainActivity)getActivity()).selectFragment();
+            Toast.makeText(getActivity(),"your message have been received",Toast.LENGTH_SHORT).show();
 
         } else {
             Toast.makeText(getActivity(), "Empty fields", Toast.LENGTH_SHORT).show();

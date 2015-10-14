@@ -51,8 +51,19 @@ public class MainActivity extends ActionBarActivity
                 mFragment = new Nominate();
                 break;
             case 2:
+                mFragment = new Complain();
+                break;
+            case 3:
                 mFragment = new Vote();
                 break;
+            case 4:
+                mFragment = new ViewVotes();
+                break;
+            case 5:
+                mFragment = new ComplainedDrs();
+                break;
+
+
 
             default:
                 break;

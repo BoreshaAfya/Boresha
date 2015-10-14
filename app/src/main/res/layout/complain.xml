@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nominate a candidate"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:id="@+id/tvnominate"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter nominee&apos;s full name"
+            android:id="@+id/tventer"
+            android:textSize="@dimen/text_size"
+            android:layout_margin="@dimen/margin_tv"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/tvnominate"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:padding="10dp"
+            android:hint="e.g DR.John Doe"
+            android:id="@+id/editText"
+            android:layout_below="@+id/tventer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Designation"
+            android:textSize="@dimen/text_size"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="@dimen/margin_tv_top"
+            android:textColor="@color/black"
+            android:id="@+id/textView4"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/editText"
+            android:layout_alignLeft="@+id/spinner"
+            android:layout_alignStart="@+id/spinner" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/textView4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nominee&apos;s Registration Number"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/black"
+            android:id="@+id/tvnum"
+            android:layout_marginBottom="@dimen/margin_tv_top"
+            android:layout_marginTop="@dimen/margin_tv_top"
+            android:layout_below="@+id/spinner"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:hint="e.g 1258"
+            android:padding="10dp"
+            android:layout_below="@+id/tvnum"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nominee&apos;s Workplace"
+            android:id="@+id/tvwork"
+            android:textSize="@dimen/text_size"
+            android:layout_marginBottom="@dimen/margin_tv_top"
+            android:layout_marginTop="@dimen/margin_tv_top"
+            android:textColor="@color/black"
+            android:layout_below="@+id/editText2"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_below="@+id/tvwork"
+            android:hint="e.g  Nairobi Hospital"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select the Hospital County"
+            android:id="@+id/texths_county"
+            android:textSize="@dimen/text_size"
+            android:layout_marginBottom="@dimen/margin_tv_top"
+            android:layout_marginTop="@dimen/margin_tv_top"
+            android:textColor="@color/black"
+            android:layout_below="@+id/editText3"
+            android:layout_alignLeft="@+id/editText3"
+            android:layout_alignStart="@+id/editText3" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2"
+            android:layout_below="@+id/texths_county" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason for Nomination"
+            android:id="@+id/tvreason"
+            android:textSize="@dimen/text_size"
+            android:layout_marginBottom="@dimen/margin_tv_top"
+            android:textColor="@color/black"
+            android:layout_below="@+id/spinner2"
+            android:layout_alignLeft="@+id/spinner2"
+            android:layout_alignStart="@+id/spinner2"
+            android:layout_marginTop="@dimen/margin_tv_top"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:layout_alignLeft="@+id/spinner2"
+            android:layout_alignStart="@+id/spinner2"
+            android:layout_below="@+id/tvreason" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Complain"
+            android:id="@+id/button"
+            android:layout_marginTop="20dp"
+            android:background="@color/main"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/editText4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+</ScrollView>

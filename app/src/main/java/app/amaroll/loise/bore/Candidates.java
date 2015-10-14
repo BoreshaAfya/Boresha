@@ -10,7 +10,7 @@ public class Candidates extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_candidates);
+        setContentView(R.layout.voted_item);
     }
 
     @Override
